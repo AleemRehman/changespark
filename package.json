@@ -1,5 +1,12 @@
 {
+  "name": "ChangeSpark",
+  "version": "0.0.1",
+  "description": "Simple Node Server with express that post's data to the Notion API from GITHUB",
   "dependencies": {
     "node": "^17.7.1"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aleemrehman"
 }
