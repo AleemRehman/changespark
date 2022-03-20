@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Simple Node Server with express that post's data to the Notion API from GITHUB",
   "dependencies": {
+    "express": "^4.17.3",
     "node": "^17.7.1"
   },
   "scripts": {
