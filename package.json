@@ -3,11 +3,15 @@
   "version": "0.0.1",
   "description": "Simple Node Server with express that post's data to the Notion API from GITHUB",
   "dependencies": {
+    "@notionhq/client": "^1.0.4",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "node": "^17.7.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "api": "node api/api"
   },
   "author": "aleemrehman"
 }

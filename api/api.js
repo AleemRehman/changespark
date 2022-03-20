@@ -1,5 +1,6 @@
 var express = require("express")
 var app = express()
+const PORT = process.env.PORT || 3000
 
 app.get("/ping", (req, res, next) => {
   // Get Status of server - used for front-end
@@ -14,7 +15,10 @@ app.get("/get_change", (req, res, next) => {
   // Params : commitID - string
 })
 
-app.post("/post_change", (req, res, next) => {})
+app.post("/post_change", (req, res, next) => {
+  // post change from the GitHub Action to notion
+  // Params:
+})
 
 app.listen(3000, () => {
   console.log("Server running on port 3000")
