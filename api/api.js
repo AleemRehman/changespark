@@ -17,8 +17,6 @@ app.get("/get_change", (req, res, next) => {
 
 app.post("/payload", (req, res, next) => {
   console.log("hit")
-  var request = JSON.parse(req)
-  var result = JSON.parse(res)
   console.log("request: " + request)
   console.log("-" * 80)
   console.log("result: " + result)
