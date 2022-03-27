@@ -15,6 +15,15 @@ app.get("/get_change", (req, res, next) => {
   // Params : commitID - string
 })
 
+app.post("/payload", (req, res, next) => {
+  console.log("hit")
+  var request = JSON.parse(req)
+  var result = JSON.parse(res)
+  console.log("request: " + request)
+  console.log("-" * 80)
+  console.log("result: " + result)
+})
+
 app.post("/post_change", (req, res, next) => {
   // post change from the GitHub Action to notion
   // Params:
