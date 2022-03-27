@@ -1,6 +1,10 @@
 var express = require("express")
 var app = express()
+var bodyParser = require("body-parser")
+var processors = require("./services/processors")
 const PORT = process.env.PORT || 3000
+
+app.use(bodyParser.json())
 
 app.get("/ping", (req, res, next) => {
   // Get Status of server - used for front-end
@@ -15,11 +19,15 @@ app.get("/get_change", (req, res, next) => {
   // Params : commitID - string
 })
 
-app.post("/payload", (req, res, next) => {
-  console.log("hit")
-  console.log("request: " + request)
-  console.log("-" * 80)
-  console.log("result: " + result)
+app.post("/payload", (req, res) => {
+  var body = req.body
+  var notion_data = processors.cleanupRequest(body, (verbose = true))
+  console.log("keys: " + Object.keys(body))
+  console.log("ref: " + body.ref)
+  // console.log("request: " + body[0])
+  // console.log("request: " + body.ref)
+  // console.log("request: " + req.ref)
+  // console.log("request: " + res)
 })
 
 app.post("/post_change", (req, res, next) => {
