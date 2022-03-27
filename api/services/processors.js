@@ -3,29 +3,24 @@ const cleanupRequest = (data, verbose = false) => {
     console.log(Object.keys(data))
   }
 
-  if (data != null) return
+  if (data == null) return
 
   var changeLogEntry = {
-    repo_name,
-    repo_url,
-    commits,
-  }
-
-  var pusherProfile = {
-    name: data.sender?.name ?? " ",
-    profile: data.sender?.html_url ?? " ",
+    repo_name: String,
+    repo_url: String,
+    commits: {},
   }
 
   var c = {
-    hash,
-    url,
-    author,
-    added,
-    removed,
-    modified,
+    hash: String,
+    url: String,
+    author: {},
+    added: {},
+    removed: {},
+    modified: {},
   }
 
-  var commits = {}
+  var commits = []
 
   data.commits.map((commit) => {
     c.hash = commit.tree_id
@@ -45,5 +40,12 @@ const cleanupRequest = (data, verbose = false) => {
   changeLogEntry.repo_url = "www.github.com/" + data.repository.full_name
   changeLogEntry.commits = commits
 
-  return commits
+  if (verbose == true) {
+    console.log("entry: " + JSON.stringify(changeLogEntry))
+  }
+  return changeLogEntry
+}
+
+module.exports = {
+  cleanupRequest,
 }

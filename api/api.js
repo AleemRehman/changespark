@@ -21,13 +21,8 @@ app.get("/get_change", (req, res, next) => {
 
 app.post("/payload", (req, res) => {
   var body = req.body
-  var notion_data = processors.cleanupRequest(body, (verbose = true))
-  console.log("keys: " + Object.keys(body))
-  console.log("ref: " + body.ref)
-  // console.log("request: " + body[0])
-  // console.log("request: " + body.ref)
-  // console.log("request: " + req.ref)
-  // console.log("request: " + res)
+  var notion_data,
+    api_response = processors.cleanupRequest(body, (verbose = true))
 })
 
 app.post("/post_change", (req, res, next) => {
