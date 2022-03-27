@@ -43,6 +43,7 @@ const cleanupRequest = (data, verbose = false) => {
 
   changeLogEntry.repo_name = data.repository.name
   changeLogEntry.repo_url = "www.github.com/" + data.repository.full_name
+  changeLogEntry.commits = commits
 
   return commits
 }
